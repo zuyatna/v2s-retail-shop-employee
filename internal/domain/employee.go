@@ -21,7 +21,7 @@ type Employee struct {
 	ID           uuid.UUID   `json:"id"`
 	Name         string      `json:"name"`
 	Email        string      `json:"email"`
-	Password     string      `json:"-"`
+	PasswordHash string      `json:"-"`
 	AccessLevel  AccessLevel `json:"access_level"`
 	Position     string      `json:"position"`
 	WorkLocation string      `json:"work_location"`
