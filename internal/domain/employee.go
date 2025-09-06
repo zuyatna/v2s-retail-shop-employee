@@ -13,18 +13,34 @@ const (
 	AccessOrdinary   AccessLevel = "ordinary"
 	AccessSupervisor AccessLevel = "supervisor"
 	AccessManager    AccessLevel = "manager"
+	AccessHR         AccessLevel = "hr"
 	AccessIntern     AccessLevel = "intern"
 )
 
-// TODO: Detailing employee fields such as address, phone number, position, etc.
 type Employee struct {
-	ID          uuid.UUID   `json:"id"`
-	Name        string      `json:"name"`
-	Email       string      `json:"email"`
-	Password    string      `json:"-"`
-	AccessLevel AccessLevel `json:"access_level"`
-	CreatedAt   time.Time   `json:"created_at"`
-	UpdatedAt   time.Time   `json:"updated_at"`
+	ID           uuid.UUID   `json:"id"`
+	Name         string      `json:"name"`
+	Email        string      `json:"email"`
+	Password     string      `json:"-"`
+	AccessLevel  AccessLevel `json:"access_level"`
+	Position     string      `json:"position"`
+	WorkLocation string      `json:"work_location"`
+	PersonalID   string      `json:"personal_id"`
+	Address      string      `json:"address"`
+	ZipCode      string      `json:"zip_code"`
+	Province     string      `json:"province"`
+	City         string      `json:"city"`
+	District     string      `json:"district"`
+	PhoneNumber  string      `json:"phone_number"`
+	PhotoURL     string      `json:"photo_url"`
+	NPWP         string      `json:"npwp"`
+	BankName     string      `json:"bank_name"`
+	BankAccount  string      `json:"bank_account"`
+	Salary       float64     `json:"salary"`
+	Status       string      `json:"status"`
+	JoinDate     time.Time   `json:"join_date"`
+	CreatedAt    time.Time   `json:"created_at"`
+	UpdatedAt    time.Time   `json:"updated_at"`
 }
 
 type EmployeeResponse struct {
