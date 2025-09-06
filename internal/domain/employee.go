@@ -9,6 +9,10 @@ import (
 
 type AccessLevel string
 
+func (a AccessLevel) Valid() bool {
+	panic("unimplemented")
+}
+
 const (
 	AccessOrdinary   AccessLevel = "ordinary"
 	AccessSupervisor AccessLevel = "supervisor"
@@ -57,6 +61,5 @@ type EmployeeRepository interface {
 	GetByID(ctx context.Context, id string) (*Employee, error)
 	GetByEmail(ctx context.Context, email string) (*Employee, error)
 	Update(ctx context.Context, e *Employee) error
-	Delete(ctx context.Context, id string) error
 	List(ctx context.Context, offset, limit int) ([]*Employee, error)
 }
